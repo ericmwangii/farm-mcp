@@ -19,7 +19,7 @@ A comprehensive farm management system for tracking animals, inventory, and gene
 
 1. Clone the repository:
    ```bash
-   git clone <your-repository-url>
+   git clone <repository-url>
    cd shamba-boy
    ```
 
