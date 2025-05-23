@@ -1,0 +1,56 @@
+{
+  "name": "shamba-boy",
+  "version": "1.0.0",
+  "description": "Farm management system for tracking animals, inventory, and generating reports with Claude Desktop integration",
+  "type": "module",
+  "scripts": {
+    "build": "tsc",
+    "start": "node dist/index.js",
+    "dev": "NODE_OPTIONS='--loader ts-node/esm' node --inspect src/index.ts",
+    "mcp": "NODE_OPTIONS='--loader ts-node/esm' node --inspect src/mcp-server.ts",
+    "watch": "tsc --watch",
+    "clean": "rm -rf dist",
+    "prepare": "npm run build",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "shamba-boy": "dist/index.js"
+  },
+  "files": [
+    "dist",
+    "claude.json"
+  ],
+  "keywords": [
+    "farm",
+    "management",
+    "inventory",
+    "animals",
+    "reports",
+    "claude",
+    "mcp"
+  ],
+  "author": "",
+  "license": "MIT",
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.12.0",
+    "csv-writer": "^1.6.0",
+    "dotenv": "^16.5.0",
+    "moment": "^2.30.1",
+    "pg": "^8.16.0",
+    "reflect-metadata": "^0.2.2",
+    "typeorm": "^0.3.24",
+    "zod": "^3.25.23"
+  },
+  "devDependencies": {
+    "@types/node": "^22.15.21",
+    "@types/pg": "^8.11.6",
+    "nodemon": "^3.1.10",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  }
+}

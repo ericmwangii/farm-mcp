@@ -1,0 +1,33 @@
+{
+  "name": "shamba-boy",
+  "version": "1.0.0",
+  "description": "Farm management system for tracking animals, inventory, and generating reports",
+  "main": "build/index.js",
+  "capabilities": {
+    "functions": [
+      {
+        "name": "feedAnimals",
+        "description": "Feed animals with specified feed type and quantity"
+      },
+      {
+        "name": "checkStock",
+        "description": "Check inventory stock levels"
+      },
+      {
+        "name": "generateReport",
+        "description": "Generate reports on farm activities"
+      }
+    ]
+  },
+  "permissions": [
+    "filesystem",
+    "network"
+  ],
+  "env": [
+    "DB_HOST",
+    "DB_PORT",
+    "DB_USERNAME",
+    "DB_PASSWORD",
+    "DB_DATABASE"
+  ]
+}
