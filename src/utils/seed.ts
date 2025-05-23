@@ -44,38 +44,44 @@ export async function seedDatabase() {
                description: "Feed the cows in the morning",
                dueDate: tomorrow,
                priority: "high",
-               status: "pending"
+               status: "pending",
+               repeatPattern: "0 7 * * *"
             },
             {
                description: "Clean the chicken coop",
                dueDate: nextWeek,
                priority: "medium",
-               status: "pending"
+               status: "pending",
+               repeatPattern: "0 0 * * 0"
             },
             {
                description: "Check water supply in all pens",
                dueDate: now,
                priority: "high",
-               status: "pending"
+               status: "pending",
+               repeatPattern: "0 */4 * * *"
             },
             {
                description: "Order more grain supply",
                dueDate: nextWeek,
                priority: "medium",
-               status: "pending"
+               status: "pending",
+               repeatPattern: "0 0 1 * *"
             },
             {
                description: "Schedule vet visit for annual checkup",
                dueDate: new Date(now.setMonth(now.getMonth() + 1)),
                priority: "low",
-               status: "pending"
+               status: "pending",
+               repeatPattern: "0 0 1 1 *"
             },
             {
                description: "Harvest eggs",
                dueDate: now,
                priority: "high",
                status: "completed",
-               completedAt: new Date()
+               completedAt: new Date(),
+               repeatPattern: "0 16 * * *"
             }
          ]);
       }

@@ -21,17 +21,16 @@ const entities = [
 
 export const AppDataSource = new DataSource({
    type: 'postgres',
-   host: process.env.DB_HOST || 'localhost',
-   port: parseInt(process.env.DB_PORT || '5432', 10),
-   username: process.env.DB_USERNAME || 'emwangi',
-   password: process.env.DB_PASSWORD || '',
-   database: process.env.DB_DATABASE || 'farm_management',
+   host: process.env.DB_HOST,
+   port: process.env.DB_PORT ? parseInt(process.env.DB_PORT) : 5432,
+   username: process.env.DB_USERNAME,
+   password: process.env.DB_PASSWORD,
+   database: process.env.DB_DATABASE,
    synchronize: true,
    logging: process.env.NODE_ENV === 'development',
    entities,
    subscribers: [],
    migrations: [],
-   // Enable SSL for production
    ssl: process.env.NODE_ENV === 'production'
       ? { rejectUnauthorized: false }
       : false,
